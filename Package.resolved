@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "ghgungnircore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://gitlab.com/styme1/mobile/ios/dependencies/ghgungnircore.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d593f0e44fb48d423414048c17bb804ceba930a2"
+      }
+    },
+    {
+      "identity" : "realm-core",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/realm/realm-core",
+      "state" : {
+        "revision" : "33dd84212b64cd0788590a93be0dde64d2869abb",
+        "version" : "11.14.0"
+      }
+    },
+    {
+      "identity" : "realm-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/realm/realm-swift.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "d3b0b3ba6cac097ece42d9b0e043dbd420267b52"
+      }
+    }
+  ],
+  "version" : 2
+}
