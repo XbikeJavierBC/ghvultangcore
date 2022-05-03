@@ -18,7 +18,7 @@ public class GHRealmCore: GHStorageVultangDelegate {
         self.commonInit()
     }
     
-    required public init(queue: DispatchQueue? = nil) {
+    required public init(queue: DispatchQueue?) {
         self.commonInit(queue: queue)
     }
     
