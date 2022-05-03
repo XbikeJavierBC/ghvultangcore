@@ -12,8 +12,5 @@ public protocol GHStorageVultangDelegate {
     
     init()
     
-    func submitRequest(bundle: Bundle) -> Bool
-    
-    func cancelAllRequest()
     func removeReferenceContext()
 }

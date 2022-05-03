@@ -12,8 +12,9 @@ import ghgungnircore
 public class GHRealmCore: GHStorageVultangDelegate {
     public var core: Realm?
     public static var objectTypes: [ObjectBase.Type]?
+    public var delegate: GHVultangCoreDelegate?
     
-    public init() {
+    required public init() {
         do {
             let realm = try Realm(configuration: self.getConfiguration())
             
@@ -107,5 +108,9 @@ public class GHRealmCore: GHStorageVultangDelegate {
         assert(status == errSecSuccess, "Failed to insert the new key in the keychain")
             
         return keyData as Data
+    }
+    
+    public func removeReferenceContext() {
+        
     }
 }
