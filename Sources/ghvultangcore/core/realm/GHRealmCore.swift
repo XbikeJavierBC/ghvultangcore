@@ -14,9 +14,17 @@ public class GHRealmCore: GHStorageVultangDelegate {
     public static var objectTypes: [ObjectBase.Type]?
     public var delegate: GHVultangCoreDelegate?
     
-    required public init() {
+    public required init() {
+        self.commonInit()
+    }
+    
+    required public init(queue: DispatchQueue? = nil) {
+        self.commonInit(queue: queue)
+    }
+    
+    private func commonInit(queue: DispatchQueue? = nil) {
         do {
-            let realm = try Realm(configuration: self.getConfiguration())
+            let realm = try Realm(configuration: self.getConfiguration(), queue: queue)
             
             if let folderPath = Realm.Configuration.defaultConfiguration.fileURL?.path {
                 try FileManager.default.setAttributes(

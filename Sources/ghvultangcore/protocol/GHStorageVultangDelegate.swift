@@ -11,6 +11,7 @@ public protocol GHStorageVultangDelegate {
     var delegate: GHVultangCoreDelegate? { get set }
     
     init()
+    init(queue: DispatchQueue?)
     
     func removeReferenceContext()
 }
