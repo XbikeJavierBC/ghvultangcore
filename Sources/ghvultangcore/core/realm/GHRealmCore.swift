@@ -51,7 +51,7 @@ public class GHRealmCore: GHStorageVultangDelegate {
         #endif
         
         config.schemaVersion = 1
-        
+         
         if let types = GHRealmCore.objectTypes {
             config.objectTypes = types
         }

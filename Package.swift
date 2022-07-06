@@ -18,8 +18,14 @@ let package = Package(
         ),
     ],
     dependencies: [
+        //TODO: Gitlab
+//        .package(
+//            url: "https://gitlab.com/styme1/mobile/ios/dependencies/ghgungnircore.git",
+//            branch: "main"
+//        ),
+        //TODO: Github
         .package(
-            url: "https://gitlab.com/styme1/mobile/ios/dependencies/ghgungnircore.git",
+            url: "https://github.com/StyMe-IOS/ghgungnircore.git",
             branch: "main"
         ),
         .package(
@@ -34,6 +40,10 @@ let package = Package(
                 "ghgungnircore",
                 .product(
                     name: "RealmSwift",
+                    package: "realm-swift"
+                ),
+                .product(
+                    name: "Realm",
                     package: "realm-swift"
                 )
             ]
