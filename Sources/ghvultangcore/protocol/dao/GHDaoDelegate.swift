@@ -14,9 +14,8 @@ public protocol GHDaoDelegate {
     func getAll(closure: @escaping ([T]) -> ()) throws
     
     func save(model: T, closure: @escaping (Bool) -> ()) throws
-    func saveAll(list: [T]) throws
+    func saveAll(list: [T], closure clousure: @escaping (Bool) -> ()) throws
     
-    func update(model: T) throws
     func delete<U>(id: U) throws
     
     func deleteAll() throws

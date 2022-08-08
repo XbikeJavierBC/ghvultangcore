@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class Property: Object {
+internal class GHPropertyRealmEntity: Object {
     @objc dynamic var id: String = ""
     @objc dynamic var streetAddress: String = ""
     @objc dynamic var city: String?

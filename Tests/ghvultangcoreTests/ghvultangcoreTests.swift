@@ -5,13 +5,13 @@ import Combine
 @available(iOS 13.0, *)
 final class ghvultangcoreTests: XCTestCase {
     var expectation: XCTestExpectation?
-    private var logRxStorage: GHPropertyLocalRepository?
+    private var logRxStorage: GHRxPropertyLocalRepository?
     private var subscriber: AnyCancellable?
     
     override func setUp() async throws {
         try await super.setUp()
         
-        self.logRxStorage = GHPropertyLocalRepository()
+        self.logRxStorage = GHRxPropertyLocalRepository()
     }
     
     override func tearDown() {
@@ -23,7 +23,7 @@ final class ghvultangcoreTests: XCTestCase {
     func testExample() throws {
         self.expectation = expectation(description: "::: Foo :::")
         
-        self.subscriber = self.logRxStorage?.foo()
+        self.subscriber = self.logRxStorage?.save()
             .sink(receiveCompletion: { completion in
             switch completion {
                 case .finished:

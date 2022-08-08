@@ -9,10 +9,10 @@ import Foundation
 import Combine
 
 @available(iOS 13.0, *)
-class GHPropertyLocalRepository {
+internal class GHRxPropertyLocalRepository {
     private var subscriber: AnyCancellable?
     
-    func foo() -> AnyPublisher<Property, Error> {
+    func save() -> AnyPublisher<GHPropertyRealmEntity, Error> {
         let jsonPublisher = Result<Any, Error>.Publisher(
             .success(
                 [
@@ -23,7 +23,7 @@ class GHPropertyLocalRepository {
         )
         
         return jsonPublisher
-            .writeObject(type: Property.self, receiveOn: .main)
+            .writeObject(type: GHPropertyRealmEntity.self, receiveOn: .main)
             .eraseToAnyPublisher()
     }
 }
