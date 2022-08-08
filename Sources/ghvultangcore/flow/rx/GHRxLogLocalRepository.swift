@@ -14,9 +14,9 @@ import ghgungnircore
 public class GHRXLogLocalRepository: GHRxDaoDelegate {
     public typealias T = GHLogModel
     public typealias U = Int
-    private let coreNotFound = "Core not initialice"
+    private static let coreNotFound = "Core not initialice"
     
-    public func get(id: Int) throws -> AnyPublisher<GHLogModel, Error>? {
+    public static func get(id: Int) throws -> AnyPublisher<GHLogModel, Error>? {
         guard let realm = GHRealmCore().core else {
             return Fail(
                 error: GHError.make(message: self.coreNotFound)
@@ -29,7 +29,7 @@ public class GHRXLogLocalRepository: GHRxDaoDelegate {
             .eraseToAnyPublisher()
     }
     
-    public func getAll() -> AnyPublisher<[GHLogModel], Error>? {
+    public static func getAll() -> AnyPublisher<[GHLogModel], Error>? {
         guard let realm = GHRealmCore().core else {
             return Fail(
                 error: GHError.make(message: self.coreNotFound)
@@ -42,7 +42,7 @@ public class GHRXLogLocalRepository: GHRxDaoDelegate {
             .eraseToAnyPublisher()
     }
     
-    public func save(model: GHLogModel) -> AnyPublisher<Bool, Error>? {
+    public static func save(model: GHLogModel) -> AnyPublisher<Bool, Error>? {
         return GHPublisher<GHLogRealmEntity, Error>(initialValue: GHLogRealmConverter.modelToEntity(model: model))
             .tryMap { realmEntity in
                 guard let realm = GHRealmCore().core else {
@@ -57,7 +57,7 @@ public class GHRXLogLocalRepository: GHRxDaoDelegate {
             .eraseToAnyPublisher()
     }
     
-    public func saveAll(modelList: [GHLogModel]) -> AnyPublisher<Bool, Error>? {
+    public static func saveAll(modelList: [GHLogModel]) -> AnyPublisher<Bool, Error>? {
         let list = modelList.map { GHLogRealmConverter.modelToEntity(model: $0) }
         
         return GHPublisher<[GHLogRealmEntity], Error>(initialValue: list)
@@ -74,7 +74,7 @@ public class GHRXLogLocalRepository: GHRxDaoDelegate {
             .eraseToAnyPublisher()
     }
     
-    public func delete(id: Int) -> AnyPublisher<Bool, Error>? {
+    public static func delete(id: Int) -> AnyPublisher<Bool, Error>? {
         guard let realm = GHRealmCore().core else {
             return Fail(
                 error: GHError.make(message: self.coreNotFound)
@@ -99,7 +99,7 @@ public class GHRXLogLocalRepository: GHRxDaoDelegate {
             .eraseToAnyPublisher()
     }
     
-    public func deleteAll() -> AnyPublisher<Bool, Error>? {
+    public static func deleteAll() -> AnyPublisher<Bool, Error>? {
         guard let realm = GHRealmCore().core else {
             return Fail(
                 error: GHError.make(message: self.coreNotFound)
