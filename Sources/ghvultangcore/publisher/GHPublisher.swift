@@ -15,11 +15,11 @@ public struct GHPublisher<Output, Failure: Swift.Error>: Publisher {
     
     private let initialValue: Output?
     
-    init(initialValue: Output? = nil) {
+    public init(initialValue: Output? = nil) {
         self.initialValue = initialValue
     }
     
-    func receive<S>(subscriber: S) where S: Subscriber, S.Failure == Failure, S.Input == Output {
+    public func receive<S>(subscriber: S) where S: Subscriber, S.Failure == Failure, S.Input == Output {
         subscriber.receive(subscription: GHSubscription<Output, Failure>(subscriber: subscriber, initialValue: initialValue))
     }
     
