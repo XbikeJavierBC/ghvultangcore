@@ -24,10 +24,16 @@ let package = Package(
 //            branch: "main"
 //        ),
         //TODO: Github
+//        .package(
+//            url: "https://github.com/StyMe-IOS/ghgungnircore.git",
+//            branch: "main"
+//        ),
+        //TODO: GoNet
         .package(
-            url: "https://github.com/StyMe-IOS/ghgungnircore.git",
+            url: "https://git.gonet.us/gnglobaldependencies/ios/ghgungnircore.git",
             branch: "main"
         ),
+        //TODO: Public
         .package(
             url: "https://github.com/realm/realm-swift.git",
             branch: "master"

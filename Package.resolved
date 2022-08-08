@@ -3,10 +3,10 @@
     {
       "identity" : "ghgungnircore",
       "kind" : "remoteSourceControl",
-      "location" : "https://gitlab.com/styme1/mobile/ios/dependencies/ghgungnircore.git",
+      "location" : "https://git.gonet.us/gnglobaldependencies/ios/ghgungnircore.git",
       "state" : {
         "branch" : "main",
-        "revision" : "d593f0e44fb48d423414048c17bb804ceba930a2"
+        "revision" : "bd3208c774d66987a2191bd016e54b40b666c23c"
       }
     },
     {
