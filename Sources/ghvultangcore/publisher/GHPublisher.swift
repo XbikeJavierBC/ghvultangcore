@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 @available(iOS 13.0, *)
-struct GHPublisher<Output, Failure: Swift.Error>: Publisher {
+public struct GHPublisher<Output, Failure: Swift.Error>: Publisher {
     public typealias Output = Output
     public typealias Failure = Failure
     
