@@ -3,7 +3,7 @@
     {
       "identity" : "ghgungnircore",
       "kind" : "remoteSourceControl",
-      "location" : "https://git.gonet.us/gnglobaldependencies/ios/ghgungnircore.git",
+      "location" : "https://github.com/XbikeJavierBC/ghgungnircore.git",
       "state" : {
         "branch" : "main",
         "revision" : "bd3208c774d66987a2191bd016e54b40b666c23c"

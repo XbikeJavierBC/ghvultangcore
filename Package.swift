@@ -29,8 +29,13 @@ let package = Package(
 //            branch: "main"
 //        ),
         //TODO: GoNet
+//        .package(
+//            url: "https://git.gonet.us/gnglobaldependencies/ios/ghgungnircore.git",
+//            branch: "main"
+//        ),
+        //TODO: Bike
         .package(
-            url: "https://git.gonet.us/gnglobaldependencies/ios/ghgungnircore.git",
+            url: "https://github.com/XbikeJavierBC/ghgungnircore.git",
             branch: "main"
         ),
         //TODO: Public
